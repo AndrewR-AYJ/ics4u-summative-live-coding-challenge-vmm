@@ -1,0 +1,21 @@
+function setup() {
+  createCanvas(600, 400);
+}
+
+function draw() {
+  background(0);
+  
+  stroke(255);
+  noFill();
+  ellipse(300, 200, 300);
+  drawCircle(width/2, height/2, 200);
+}
+
+function drawCircle(x, y, d){
+  ellipse(x, y, d);
+  if (d > 2){
+    let newD = d * 0.25;
+    drawCircle(x, y, newD);
+    drawCircle(x - 10, y-newD, newD);
+  }
+};
